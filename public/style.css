@@ -9,10 +9,10 @@
   --text-color: #ffffff;
 
   /* 背景色のカラーコード */
-  --background-color: #000000;
+  --background-color: #66667a;
 
   /* 背景色の不透明度 (0: 完全に透明 ~ 1: 完全に不透明) */
-  --background-opacity: 0.65;
+  --background-opacity: 1;
 
   /* コロンの点滅の有無 (0: 点滅なし, 1: 点滅あり) */
   --colon-blink-enabled: 0;
