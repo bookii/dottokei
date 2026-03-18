@@ -1,8 +1,12 @@
+@font-face {
+  font-family: MeltingDot;
+  src: url("/MeltingDot-Regular.otf") format("opentype");
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Melting Dot", sans-serif;
-  src: url("/MeltingDot-Regular.otf");
+  font-family: MeltingDot, sans-serif;
   color: var(--foreground-color);
 }
 
