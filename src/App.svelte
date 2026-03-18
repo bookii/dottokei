@@ -16,21 +16,6 @@
     date = new Date();
     isColonVisible = !isColonVisible;
   }, 1000);
-
-  function applyBackgroundColor() {
-    const style = getComputedStyle(document.documentElement);
-    const hex = style.getPropertyValue("--background-color").trim();
-    const match = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
-    if (!match) {
-      return;
-    }
-    const [, r, g, b] = match.map((x) => parseInt(x, 16));
-    document.documentElement.style.setProperty("--background-color-r", `${r}`);
-    document.documentElement.style.setProperty("--background-color-g", `${g}`);
-    document.documentElement.style.setProperty("--background-color-b", `${b}`);
-  }
-
-  applyBackgroundColor();
 </script>
 
 <div class="clock-container {layout}">

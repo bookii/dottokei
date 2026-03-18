@@ -3,28 +3,27 @@ body {
   padding: 0;
   font-family: "Melting Dot", sans-serif;
   src: url("/MeltingDot-Regular.otf");
-  color: var(--text-color);
+  color: var(--foreground-color);
 }
 
 .clock-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(
-    var(--background-color-r),
-    var(--background-color-g),
-    var(--background-color-b),
-    var(--background-opacity)
-  );
-  border-radius: 0 0 4vw 4vw;
+  background-color: var(--background-color);
+  border: 1.5vw solid var(--foreground-color);
+  border-radius: 3vw;
+  box-sizing: border-box;
 }
 
 .clock-container.standard {
   aspect-ratio: 8 / 5;
+  border-top: 4.5vw solid var(--foreground-color);
 }
 
 .clock-container.slim {
   aspect-ratio: 4 / 1;
+  border-left: 4.5vw solid var(--foreground-color);
 }
 
 .clock {
@@ -42,17 +41,17 @@ body {
 .slim .clock {
   flex-direction: row;
   align-items: flex-end;
-  transform: translateY(1.8vw);
-  gap: 2vw;
+  transform: translate(-0.2vw, 1.8vw);
+  gap: 3vw;
 }
 
 .standard .date {
-  font-size: 7vw;
+  font-size: 6.5vw;
   transform: translateX(1vw);
 }
 
 .slim .date {
-  font-size: 6vw;
+  font-size: 5.5vw;
   transform: translateY(-1.85vw);
 }
 
@@ -61,11 +60,11 @@ body {
 }
 
 .standard .time {
-  font-size: 17vw;
+  font-size: 16vw;
 }
 
 .slim .time {
-  font-size: 11vw;
+  font-size: 10vw;
 }
 
 .colon {

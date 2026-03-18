@@ -1,19 +1,10 @@
 :root {
-  /* 💡
-   * 背景に半透明の色を指定するときのヒント:
-   * OBS の仕様により、背景に指定した半透明の色が濁って見えることがあります。
-   * その場合は OBS 内のブラウザソースを右クリックして「ブレンド方法 > SRGB オフ」を指定すると解消する可能性が高いです。
-   */
-
-  /* 文字のカラーコード */
-  --text-color: #ffffff;
+  /* 文字と外枠のカラーコード */
+  --foreground-color: #7a8999;
 
   /* 背景色のカラーコード */
-  --background-color: #66667a;
-
-  /* 背景色の不透明度 (0: 完全に透明 ~ 1: 完全に不透明) */
-  --background-opacity: 1;
+  --background-color: #ffffff;
 
   /* コロンの点滅の有無 (0: 点滅なし, 1: 点滅あり) */
-  --colon-blink-enabled: 0;
+  --colon-blink-enabled: 1;
 }
