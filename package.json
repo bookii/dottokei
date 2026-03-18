@@ -4,8 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
-    "build": "vp build",
+    "dev:standard": "VITE_LAYOUT=standard vp dev",
+    "dev:slim": "VITE_LAYOUT=slim vp dev",
+    "build": "pnpm run build:standard && pnpm run build:slim",
+    "build:standard": "VITE_LAYOUT=standard vp build --emptyOutDir false && mv dist/index.html dist/dottokei-standard.html",
+    "build:slim": "VITE_LAYOUT=slim vp build --emptyOutDir false && mv dist/index.html dist/dottokei-slim.html",
     "preview": "vp preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
     "prepare": "vp config"

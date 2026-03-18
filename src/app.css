@@ -10,7 +10,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 1;
   background-color: rgba(
     var(--background-color-r),
     var(--background-color-g),
@@ -20,63 +19,55 @@ body {
   border-radius: 0 0 4vw 4vw;
 }
 
+.clock-container.standard {
+  aspect-ratio: 8 / 5;
+}
+
+.clock-container.slim {
+  aspect-ratio: 4 / 1;
+}
+
 .clock {
   display: flex;
+  justify-content: center;
+}
+
+.standard .clock {
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translateY(1.5vw);
+  gap: 4vw;
+}
+
+.slim .clock {
   flex-direction: row;
   align-items: flex-end;
-  justify-content: center;
   transform: translateY(1.8vw);
   gap: 2vw;
 }
 
-.date {
+.standard .date {
+  font-size: 7vw;
+  transform: translateX(1vw);
+}
+
+.slim .date {
   font-size: 6vw;
   transform: translateY(-1.85vw);
 }
 
-.date-vertical {
-  display: none;
-}
-
-.date-horizontal {
-  display: block;
-}
-
 .time {
   display: flex;
+}
+
+.standard .time {
+  font-size: 17vw;
+}
+
+.slim .time {
   font-size: 11vw;
 }
 
 .colon {
   opacity: max(calc(1 - var(--colon-blink-enabled)), var(--colon-opacity));
-}
-
-@media (max-aspect-ratio: 8 / 5) {
-  .clock-container {
-    aspect-ratio: 8 / 5;
-  }
-
-  .clock {
-    flex-direction: column;
-    align-items: flex-start;
-    transform: translateY(1.5vw);
-    gap: 4vw;
-  }
-
-  .date {
-    font-size: 7vw;
-    transform: translateX(1vw);
-  }
-
-  .date-vertical {
-    display: block;
-  }
-
-  .date-horizontal {
-    display: none;
-  }
-
-  .time {
-    font-size: 17vw;
-  }
 }

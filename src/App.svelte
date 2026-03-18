@@ -1,4 +1,9 @@
 <script lang="ts">
+  type Props = {
+    layout: Layout;
+  };
+
+  const { layout }: Props = $props();
   let date: Date = $state(new Date());
   let year = $derived(date.getFullYear());
   let month = $derived(date.getMonth() + 1);
@@ -28,19 +33,20 @@
   applyBackgroundColor();
 </script>
 
-<div class="clock-container">
+<div class="clock-container {layout}">
   <div class="clock">
-    <div class="date date-vertical">
-      {year}.{month}.{day}
-    </div>
-    <div class="date date-horizontal">
-      {month}/{day}
+    <div class="date">
+      {#if layout === "standard"}
+        {year}.{month}.{day}
+      {:else}
+        {month}/{day}
+      {/if}
     </div>
     <div class="time">
       {hours}
-      <span class="colon" style="--colon-opacity: {isColonVisible ? 1 : 0}"
-        >:</span
-      >
+      <span class="colon" style="--colon-opacity: {isColonVisible ? 1 : 0}">
+        :
+      </span>
       {minutes}
     </div>
   </div>
