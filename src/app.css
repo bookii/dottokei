@@ -75,3 +75,10 @@ body {
 .colon {
   opacity: max(calc(1 - var(--colon-blink-enabled)), var(--colon-opacity));
 }
+
+.date,
+.time {
+  /* 数字が切り替わるときに残像が発生するのを防ぐ */
+  will-change: contents;
+  transform: translateZ(0);
+}
