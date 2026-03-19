@@ -15,18 +15,19 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--background-color);
-  border: 1.5vw solid var(--foreground-color);
   border-radius: 3vw;
   box-sizing: border-box;
 }
 
 .clock-container.standard {
   aspect-ratio: 8 / 5;
-  border-top: 4.5vw solid var(--foreground-color);
+  border: 1.6vw solid var(--foreground-color);
+  border-top: 4.8vw solid var(--foreground-color);
 }
 
 .clock-container.slim {
   aspect-ratio: 4 / 1;
+  border: 1.5vw solid var(--foreground-color);
   border-left: 4.5vw solid var(--foreground-color);
 }
 
