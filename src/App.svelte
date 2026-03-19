@@ -8,13 +8,12 @@
   let year = $derived(date.getFullYear());
   let month = $derived(date.getMonth() + 1);
   let day = $derived(date.getDate());
-  let hours = $derived(date.getHours().toString().padStart(2, "0"));
-  let minutes = $derived(date.getMinutes().toString().padStart(2, "0"));
-  let isColonVisible = $state(true);
+  let hours = $derived(date.getHours());
+  let minutes = $derived(date.getMinutes());
+  let seconds = $derived(date.getSeconds());
 
   setInterval(() => {
     date = new Date();
-    isColonVisible = !isColonVisible;
   }, 1000);
 </script>
 
@@ -28,11 +27,11 @@
       {/if}
     </div>
     <div class="time">
-      {hours}
-      <span class="colon" style="--colon-opacity: {isColonVisible ? 1 : 0}">
+      {hours.toString().padStart(2, "0")}
+      <span class="colon" style="--colon-opacity: {seconds % 2 === 0 ? 1 : 0}">
         :
       </span>
-      {minutes}
+      {minutes.toString().padStart(2, "0")}
     </div>
   </div>
 </div>
